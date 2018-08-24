@@ -342,3 +342,5 @@ __pycache__/
 # Pasta dos usuários
 usuarios/
 debug.txt
+nbproject/project.properties
+nbproject/project.xml
