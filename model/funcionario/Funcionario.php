@@ -1,6 +1,6 @@
 <?php
 
-public class Funcionario extends "../usuario/Usuario.php" {
+class Funcionario {
     private $cod;
     private $nome_funci;
     private $cpf;
