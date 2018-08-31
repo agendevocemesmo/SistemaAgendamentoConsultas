@@ -26,7 +26,7 @@
     <title>SisConsul</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../biblioteca/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
