@@ -11,7 +11,7 @@ if (isset($_POST['btnSubmit'])) {
         $_SESSION['logado'] = '1';
 		$_SESSION['nome'] = $usuarioDAO->RetornaNome($_POST['txtEmail']);
 	  
-	  header ("Location: huebr.html");
+	  header ("Location: view/indexpac.php");
     } else {
         ?>
         <script type="text/javascript">
@@ -41,7 +41,7 @@ if (isset($_GET['erro'])) {
 }
 
 if ($_SESSION['logado'] == 1) {
-   header ("Location: huebr.html");
+   header ("Location: view/indexpac.php");
 }
 ?>
 

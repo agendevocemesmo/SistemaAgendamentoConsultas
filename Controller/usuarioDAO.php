@@ -84,7 +84,20 @@ class usuarioDAO {
             echo "ERRO 04: {$ex->getMessage()}";
         }
     }
-
+    public function RetornaNome($email){
+        try{
+            $stmt = $this->pdo->prepare("SELECT us_nome FROM usuario WHERE us_email =:email");
+            $param = array (
+                ":email" => $email
+            );
+             $stmt->execute($param);  
+             $dados = $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $ex) {
+            echo "ERRO 04: {$ex->getMessage()}";
+            return null;
+        }
+        
+    }
 }
 
 ?>
