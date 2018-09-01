@@ -11,10 +11,10 @@ class senhaDAO {
 
     function cadastrar(senha $entSenha) {
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO senha VALUES (:us_cod, :se_senha)");
+            $stmt = $this->pdo->prepare("INSERT INTO senha VALUES (:us_cod, :us_senha)");
             $param = array(
                 ":us_cod" => $entSenha->getUs_cod(),
-                ':se_senha' => md5($entSenha->getSe_senha())
+                ':us_senha' => md5($entSenha->getUs_senha())
             );
 
             return $stmt->execute($param);
@@ -23,13 +23,13 @@ class senhaDAO {
         }
     }
 
-    public function redefinirSenha($us_cod, $se_senha) {
+    public function redefinirSenha($us_cod, $us_senha) {
         try {
-            $stmt = $this->pdo->prepare("UPDATE senha set se_senha = :se_senha WHERE us_cod = :us_cod");
+            $stmt = $this->pdo->prepare("UPDATE senha set us_senha = :us_senha WHERE us_cod = :us_cod");
 
             $param = array(
                 ":us_cod" => $us_cod,
-                ":se_senha" => md5($se_senha)
+                ":us_senha" => md5($us_senha)
             );
             
             return $stmt->execute($param);

@@ -63,13 +63,13 @@ class usuarioDAO {
         }
     }
 
-    function login($us_email, $se_senha) {
+    function login($us_email, $us_senha) {
         try {
-            $stmt = $this->pdo->prepare("SELECT * FROM usuario INNER JOIN senha on senha.us_cod = usuario.us_cod WHERE usuario.us_email = :us_email AND senha.se_senha = :se_senha");
+            $stmt = $this->pdo->prepare("SELECT * FROM usuario INNER JOIN senha on senha.us_cod = usuario.us_cod WHERE usuario.us_email = :us_email AND senha.us_senha = :us_senha");
 
             $param = array(
                 ":us_email" => $us_email,
-                ":se_senha" => md5($se_senha)
+                ":us_senha" => md5($us_senha)
             );
 
 

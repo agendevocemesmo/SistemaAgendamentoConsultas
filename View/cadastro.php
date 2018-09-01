@@ -79,7 +79,7 @@ if (isset($_POST['btnSubmit'])) {
 
             $codigoUsuario = $usuarioDAO->consultarCodUsuario($_POST['txtEmail']);
 
-            $senha->setSe_senha($_POST['txtPassAccept']);
+            $senha->setUS_senha($_POST['txtPassAccept']);
             $senha->setUs_cod($codigoUsuario);
 
             if ($senhaDAO->cadastrar($senha)) {
