@@ -1,5 +1,5 @@
 <?php
-
+session_start();
  ?>
 
 <!doctype html>
@@ -38,7 +38,7 @@
          
         </ul>
           <ul class="nav navbar-nav navbar-right">
-      <a class="nav-link" href="#">Sair <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../logout.php?token='.md5(session_id()).'">Sair <span class="sr-only">(current)</span></a>
         
       </div>
     </nav>
