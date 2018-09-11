@@ -9,7 +9,7 @@ if (isset($_POST['btnSubmit'])) {
     if ($usuarioDAO->login($_POST['txtEmail'], $_POST['txtPassword'])) {
 
         $_SESSION['logado'] = '1';
-		$_SESSION['nome'] = $usuarioDAO->RetornaNome($_POST['txtEmail']);
+		$_SESSION['nome'] = $usuarioDAO->RetornaNome($_POST['txtNome']);
 	  
 	  header ("Location: view/indexpac.php");
     } else {
@@ -43,6 +43,8 @@ if (isset($_GET['erro'])) {
 if ($_SESSION['logado'] == 1) {
    header ("Location: view/indexpac.php");
 }
+
+   
 ?>
 
 <!DOCTYPE html>

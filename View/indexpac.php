@@ -1,5 +1,11 @@
 <?php
-session_start();
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+ session_start();
+}
+if (!isset ($_SESSION['logado'])) {
+   header ("Location: ../index.php");
+}
  ?>
 
 <!doctype html>
@@ -38,7 +44,7 @@ session_start();
          
         </ul>
           <ul class="nav navbar-nav navbar-right">
-              <a class="nav-link" href="../logout.php?token='.md5(session_id()).'">Sair <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../logout.php">Sair <span class="sr-only">(current)</span></a>
         
       </div>
     </nav>
@@ -47,13 +53,12 @@ session_start();
 
       <div class="starter-template">
         <h1>SisConsul</h1>
-        
             <body>
                 <br>
                 <script language="JavaScript">
 
                 document.write("<font color='#000000' size='3' face='arial'>")
-                var mydate=new Date()
+                var mydate=new Date()s
                 var year=mydate.getYear()
                 if (year<2000)
                 year += (year < 1900) ? 1900 : 0
