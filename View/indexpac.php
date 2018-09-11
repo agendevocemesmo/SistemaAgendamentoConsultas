@@ -3,8 +3,10 @@
 if (session_status() !== PHP_SESSION_ACTIVE) {
  session_start();
 }
+
 if (!isset ($_SESSION['logado'])) {
    header ("Location: ../index.php");
+   
 }
  ?>
 
@@ -53,6 +55,7 @@ if (!isset ($_SESSION['logado'])) {
 
       <div class="starter-template">
         <h1>SisConsul</h1>
+        <?php echo 'Usuário : '.$_SESSION['nome'    ]; ?>
             <body>
                 <br>
                 <script language="JavaScript">

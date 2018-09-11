@@ -6,6 +6,7 @@
     private $us_email;
     private $us_sexo;
     private $us_ip;
+    private $tipo;
     
     function getUs_cod() {
         return $this->us_cod;
@@ -47,6 +48,17 @@
         $this->us_ip = $us_ip;
     }
 
+    function getTipo() {
+        return $this->tipo;
+    }
+
+    function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
+
+
 }
+
+    
 
 ?>

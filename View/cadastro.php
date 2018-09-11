@@ -28,7 +28,9 @@ $senha = new senha();
             <br />
             <form method="post" name="frmCadastro">
                 <table>
+                    <input type="text" name="utipo" style="display:none;" value="1">
                     <tr>
+                        
                         <td>Nome:</td>
                         <td><input type="text" name="txtNome" placeholder="Joãozinho josé" autocomplete="off" /></td>
                     </tr>
@@ -45,6 +47,7 @@ $senha = new senha();
                         <td><input type="password" onKeyUp="validarSenha('txtPass', 'txtPassAccept', 'resultadoCadastro');" id="txtPassAccept" name="txtPassAccept" placeholder="*********" autocomplete="off" /></td>
                     </tr>
                     <tr>
+                        <input type="text" name="txt1" style="display:none;" value="1">
                         <td>Sexo:</td>
                         <td>
                             <select name="slSexo">
@@ -58,7 +61,7 @@ $senha = new senha();
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="submit" name="btnSubmit" value="Cadastrar" class="btnSubmit" /> <a href="index.php">Voltar</a>
+                            <input type="submit" name="btnSubmit" value="Cadastrar" class="btnSubmit" /> <a href="../index.php">Voltar</a>
                         </td>
                     </tr>
                 </table>
@@ -72,6 +75,7 @@ if (isset($_POST['btnSubmit'])) {
     $usuario->setUs_nome($_POST['txtNome']);
     $usuario->setUs_email($_POST['txtEmail']);
     $usuario->setUs_sexo($_POST['slSexo']);
+    $usuario->setTipo($_POST['utipo']);
 
     if (!$usuarioDAO->consultarEmail($_POST['txtEmail'])) {
 

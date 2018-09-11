@@ -11,12 +11,13 @@ class usuarioDAO {
 
     function cadastrar(usuario $entUsuario) {
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO usuario VALUES ('', :us_nome, :us_email, :us_sexo, :us_ip)");
+            $stmt = $this->pdo->prepare("INSERT INTO usuario VALUES ('', :us_nome, :us_email, :us_sexo, :us_ip, :tipo)");
             $param = array(
                 ":us_nome" => $entUsuario->getUs_nome(),
                 ":us_email" => $entUsuario->getUs_email(),
                 ":us_sexo" => $entUsuario->getUs_sexo(),
-                ":us_ip" => $_SERVER["REMOTE_ADDR"]
+                ":us_ip" => $_SERVER["REMOTE_ADDR"],
+                "tipo" =>   $entUsuario->getTipo(),    
             );
 
             return $stmt->execute($param);

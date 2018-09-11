@@ -1,4 +1,4 @@
-<?php
+22'                                 <?php
 require_once ("../Controller/usuarioDAO.php");
 require_once("../Model/usuario/usuario.php");
 
